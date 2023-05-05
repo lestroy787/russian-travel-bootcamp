@@ -1,61 +1,52 @@
 .cover__background {
-  max-width: 100%;
+  margin: 0;
+  max-width: 1184px;
+  min-height: 740px;
+  height: 100%;
+  background-image: url(../../../images/cover-baikal.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-image: url(../../../images/cover-baikal.jpg);
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: 1;
-  color: #fff;
+  justify-content: center;
   text-decoration: none;
+  color: inherit;
 }
 
-.cover__background:after {
+.cover__background::before {
   content: '';
-  width: 100%;
-  height: 100%;
-  background-color: #2a2c2f;
   position: absolute;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
+  background-color: #2a2c2f;
   opacity: .3;
-  transition: opacity .2s linear;
+  transition: opacity 1s ease-in-out;
 }
 
-.cover__background:hover:after {
+.cover__background:hover::before {
   opacity: .8;
 }
 
-@media screen and (min-width: 1280px) {
+@media (max-width: 1279px) {
   .cover__background {
-    min-height: 740px;
+    max-width: 100%;
+    min-height: calc(640px + (100 + 100 * .7) * (100vw - 1024px) / 1279);
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media (max-width: 1023px) {
   .cover__background {
-    min-height: calc(100vw * 740 / 1280);
+    min-height: calc(480px + (160 + 160 * .7) * (100vw - 768px) / 1023);
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 767px) {
   .cover__background {
-    min-height: calc(100vw * 640 / 1024);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .cover__background {
-    min-height: calc(100vw * 480 / 768);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .cover__background {
-    background-size: cover;
+    min-height: calc(200px + (280 + 280 * .7) * (100vw - 320px) / 767);
   }
 }

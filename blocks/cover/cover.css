@@ -1,11 +1,15 @@
 .cover {
-  max-width: 1184px;
-  margin: 0 auto;
-  padding: 5.75rem 0;
+  margin: 92px 0 0;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1023px) {
   .cover {
-    padding: calc(4rem + (100vw - 320px) / (448) * (26)) 0 calc(4rem + (100vw - 320px) / (448) * (28));
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cover {
+    margin-top: 66px;
   }
 }
